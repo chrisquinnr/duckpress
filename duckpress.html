@@ -1,0 +1,19 @@
+<head>
+  <title>duckpress</title>
+</head>
+
+<body>
+  <h1>DUCKPRESS</h1>
+
+  {{> hello}}
+
+</body>
+
+<template name="hello">
+  <button id="reset" class="btn btn-sm btn-warning">Reset</button>
+  <br>
+  <textarea class="form-control" id="input" placeholder="type something ducking brilliant in here"></textarea>
+  {{#each getOutput}}
+    <img width="75" src="{{this}}">
+  {{/each}}
+</template>
