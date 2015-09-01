@@ -3,17 +3,37 @@
 </head>
 
 <body>
-  <h1>DUCKPRESS</h1>
 
-  {{> hello}}
+  <div class="container">
+    <div class="row text-center" id="header">
+      <div class="col-xs-4 col-xs-offset-4">
+        <img src="/DUCKS/65.jpg">
+        <h1>DUCKPRESS</h1>
+      </div>
+    </div>
+    <div class="row">
+      {{> duckpress}}
+    </div>
+
+  </div>
 
 </body>
 
-<template name="hello">
-  <button id="reset" class="btn btn-sm btn-warning">Reset</button>
-  <br>
-  <textarea class="form-control" id="input" placeholder="type something ducking brilliant in here"></textarea>
-  {{#each getOutput}}
-    <img width="75" src="{{this}}">
-  {{/each}}
+<template name="duckpress">
+  <div class="col-xs-8 col-xs-offset-2" id="entry">
+    {{#if getOutput}}
+      <button id="reset" class="btn btn-sm btn-warning">Reset</button>
+    {{/if}}
+    <br>
+    <textarea class="form-control" id="input" placeholder="type something ducking brilliant in here"></textarea>
+  </div>
+  <div class="col-xs-12">
+    {{#each getOutput}}
+      {{>duck path=this}}
+    {{/each}}
+  </div>
+</template>
+
+<template name="duck">
+  <img width="75" src="{{path}}">
 </template>

@@ -8,23 +8,18 @@ if (Meteor.isClient) {
   };
 
   var addSpacer = function ( newValue ) {
-    var existing = getOutput();
     var src = '/spacer.png';
-    existing.push(src);
-    output = existing;
+    output.push(src);
     outputDep.changed();
   };
 
   var addOutput = function ( newValue ) {
-    var existing = getOutput();
     var src = '/DUCKS/'+newValue+'.jpg';
-    existing.push(src);
-    output = existing;
+    output.push(src);
     outputDep.changed();
   };
 
   var trimOutput = function ( newValue ) {
-    var existing = getOutput();
     output.pop();
     outputDep.changed();
   };
@@ -34,21 +29,16 @@ if (Meteor.isClient) {
     outputDep.changed();
   };
 
-  Template.hello.helpers({
+  Template.duckpress.helpers({
     getOutput: function(){
       return getOutput();
     }
   });
 
-  Template.hello.events({
-    'click button': function () {
-      // increment the counter when button is clicked
-      Session.set('counter', Session.get('counter') + 1);
-    },
+  Template.duckpress.events({
     'keyup #input': function(e) {
-      //var mySound = new buzz.sound("/squeak.mp3");
-      //buzz.all().play();
-      var snd = new Audio("/squeak.mp3"); // buffers automatically when created
+      var clip = Random.choice(['/squeak.mp3', '/squeak_2.mp3', '/squeak_3.mp3'])
+      var snd = new Audio(clip); // buffers automatically when created
       snd.play();
       if(e.keyCode == 8){
         trimOutput();
