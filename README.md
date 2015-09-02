@@ -69,4 +69,4 @@ We can very quickly begin to construct a simple realtime webapp harnessing react
 
 There's a great many potential uses for this sort of behaviour, but hopefully Duckpress will allow you to get your head around how reactive variables can be used in a working example.
   
-(@chrisquinnr)[http://twitter.com/chrisquinnr]
+[@chrisquinnr](http://twitter.com/chrisquinnr)
