@@ -8,9 +8,8 @@ This is a demonstration of using Reactive Variables in a simple webapp.
 
 We create simple client side methods to manipulate our reactive variable thus: 
 
-
 ```
-var output = [];
+  var output = [];
   var outputDep = new Tracker.Dependency;
 
   var getOutput = function () {
@@ -39,7 +38,6 @@ var output = [];
     output = [];
     outputDep.changed();
   };
-
 ```
 
 There's room for this to be refactored, but this syntax aids legiblity. By calling these methods when bound to particular events:
